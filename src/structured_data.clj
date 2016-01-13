@@ -33,10 +33,15 @@
   )
 
 (defn square? [rectangle]
-  :-)
+  (let [[[x1 y1] [x2 y2]] rectangle]
+    (if (== (- (- y2 y1) (- x2 x1)) 0) true false)
+    )
+  )
 
 (defn area [rectangle]
-  :-)
+  (let [[[x1 y1] [x2 y2]] rectangle]
+    (* (- y2 y1) (- x2 x1)))
+  )
 
 (defn contains-point? [rectangle point]
   :-)
