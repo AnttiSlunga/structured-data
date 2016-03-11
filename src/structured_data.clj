@@ -62,17 +62,19 @@
   (count (:title book)))
 
 (defn author-count [book]
-  (count (get book :authors)))
+  (count (:authors book)))
 
 (defn multiple-authors? [book]
   (> (author-count book) 1))
 
 (defn add-author [book new-author]
   (let [original-authors (:authors book)
-        new-authors (assoc original-authors :author new-author)]))
+        new-authors (conj original-authors new-author)
+        new-book (assoc book :authors new-authors)]
+    new-book))
 
 (defn alive? [author]
-  :-)
+  (not (contains? author :death-year)))
 
 (defn element-lengths [collection]
   :-)

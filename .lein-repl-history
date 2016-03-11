@@ -3,3 +3,98 @@ quit
 ll
 pwd
 quit
+(* 4 5)
+quit
+(def china {:name "China Miéville", :birth-year 1972})
+(def octavia {:name "Octavia E. Butler"
+              :birth-year 1947
+              :death-year 2006})
+(def friedman {:name "Daniel Friedman" :birth-year 1944})
+(def felleisen {:name "Matthias Felleisen"})
+(def cities {:title "The City and the City" :authors [china]})
+(def wild-seed {:title "Wild Seed", :authors [octavia]})
+(def embassytown {:title "Embassytown", :authors [china]})
+(def little-schemer {:title "The Little Schemer"
+                     :authors [friedman, felleisen]})
+(defn multiple-authors? [book]
+  (> (author-count book) 1))
+(defn author-count [book]
+  (count (:authors book)))
+(defn multiple-authors? [book]
+  (> (author-count book) 1))
+multiple-authors? cities) 
+(multiple-authors? cities) 
+(:author book)
+(:authors book)
+(:authors "Wild Seed")
+(def china {:name "China Miéville", :birth-year 1972})
+(def octavia {:name "Octavia E. Butler"
+              :birth-year 1947
+              :death-year 2006})
+(def friedman {:name "Daniel Friedman" :birth-year 1944})
+(def felleisen {:name "Matthias Felleisen"})
+(def cities {:title "The City and the City" :authors [china]})
+(def wild-seed {:title "Wild Seed", :authors [octavia]})
+(def embassytown {:title "Embassytown", :authors [china]})
+(def little-schemer {:title "The Little Schemer"
+                     :authors [friedman, felleisen]})
+(def books [cities, wild-seed, embassytown, little-schemer])
+(let [china {:name "China Miéville", :birth-year 1972}
+      octavia {:name "Octavia E. Butler"
+               :birth-year 1947
+               :death-year 2006}
+      friedman {:name "Daniel Friedman" :birth-year 1944}
+      felleisen {:name "Matthias Felleisen"}
+      cities {:title "The City and the City" :authors [china]}
+      wild-seed {:title "Wild Seed", :authors [octavia]}
+      embassytown {:title "Embassytown", :authors [china]}
+      little-schemer {:title "The Little Schemer"
+                      :authors [friedman, felleisen]}
+      books [cities, wild-seed, embassytown, little-schemer]]
+)
+(def china {:name "China Miéville", :birth-year 1972})
+(def octavia {:name "Octavia E. Butler"
+              :birth-year 1947
+              :death-year 2006})
+(def friedman {:name "Daniel Friedman" :birth-year 1944})
+(def felleisen {:name "Matthias Felleisen"})
+(def cities {:title "The City and the City" :authors [china]})
+(def wild-seed {:title "Wild Seed", :authors [octavia]})
+(def embassytown {:title "Embassytown", :authors [china]})
+(def little-schemer {:title "The Little Schemer"
+                     :authors [friedman, felleisen]})
+(def books [cities, wild-seed, embassytown, little-schemer])
+:authors "Wild Seed")
+(:authors wild-seed)
+(defn add-author [book new-author]
+  (let [original-authors (:authors book)
+        new-authors (conj original-authors new-author)]))
+(add-author wild-seed "Antti Author")
+(add-author little-schemer {:name "Gerald J. Sussman"})
+(add-author)
+(defn add-author [book new-author]
+  (let [original-authors (:authors book)]))
+(add-author wild-seed "aatu")
+(:authors wild-seed)
+(defn add-author [book new-author]
+  (let [original-authors (:authors book)]))
+(add-author wild-seed "aatu")
+(defn add-author [book]
+  (let [original-authors (:authors book)]))
+(add-author wild-seed "aatu")
+(add-author wild-seed)
+(defn add-author [book new-author]
+  (let [original-authors (:authors book)
+        new-authors (conj original-authors new-author)]
+    new-authors))
+(add-author little-schemer {:name "Gerald J. Sussman"})
+(defn alive? [author]
+  (contains? author (:death-year author)))
+(alive? china)
+(alive? octavia)
+(:death-year china)
+(:death-year octavia)
+(contains? (:death-year octavia))
+(contains? octavia (:death-year octavia))
+(contains? octavia (:death-year))
+quit
