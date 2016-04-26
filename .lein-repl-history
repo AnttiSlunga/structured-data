@@ -98,3 +98,114 @@ multiple-authors? cities)
 (contains? octavia (:death-year octavia))
 (contains? octavia (:death-year))
 quit
+(+ 9 9 )
+(defn munge [x]
+  (+ x 42))
+(map munge [1 2 3 4])
+(defn second-elements [collection]
+  (map second collection))
+(second-elements [[1 2] [2 3] [3 4]])
+(second-elements [[1 2 3 4] [1] ["a" "s" "d" "f"]])
+(defn second-elements [collection]
+  (let [kaks (fn [collection] (get collection 2) )])
+  (map kaks collection))
+(defn second-elements [collection]
+  (let [kaks (fn [collection] (get collection 2))]
+  (map kaks collection)))
+(second-elements [[1 2] [2 3] [3 4]])
+(defn second-elements [collection]
+  (let [kaks (fn [collection] (second collection))]
+  (map kaks collection)))
+(second-elements [[1 2] [2 3] [3 4]])
+(repeat 5 "*")
+(defn stars [n]
+  (repeat n "*"))
+(stars 5)
+(defn stars [n]
+   (concat (repeat n "*")))
+(stars 5)
+(defn stars [n]
+   ( (repeat n (apply concat "*"))))
+(stars 5)
+(defn stars [n]
+   (apply concat (repeat n "*")))
+(stars 5)
+(defn stars [n]
+   (apply concat (repeat n "\*")))
+(str "jee" "joo")
+(str "*" "joo")
+(str "*" "*")
+(defn stars [n]
+   (apply str (repeat n "*")))
+(stars 5)
+(<= 0 1 2)
+(<= 0 1 2 0)
+(defn monotonic? [a-seq]
+  (apply <= a-seq))
+(monotonic? [1 2 3])
+(monotonic? [1 2 3 0])
+(monotonic? [1 2 3 10])
+(monotonic? [1 2 3 0 10])
+(fn "lisaa"
+)
+(fn "lisaa")
+(defn toggle [a-set elem]
+    (if (contains? a-set elem) (disj a-set elem)  (conj a-set elem)))
+(defn monotonic? [a-seq]
+  (apply <= a-seq))
+(monotonic? [1 2 3]) 
+(monotonic? [1 2 1 0])
+(monotonic? [3 2 0 -3])
+(monotonic? [3 2 2])
+(<= 1 2 3)
+(<= 1 2 3 0)
+(<= 2 1 0)
+(defn monotonic? [a-seq]
+  (or ((apply <= a-seq) (apply >= a-seq))))
+(monotonic? [3 2 2])
+(defn monotonic? [a-seq]
+  (or (apply <= a-seq) (apply >= a-seq)))
+(monotonic? [3 2 2])
+(monotonic? [3 2 3])
+(monotonic? [3 2 -3])
+(defn contains-duplicates? [a-seq]
+   (>= (count a-seq) (count (set a-seq))))
+(contains-duplicates? [1 1 2 3 -40])
+(contains-duplicates? [1 2 3 -40])
+(defn contains-duplicates? [a-seq]
+   (> (count a-seq) (count (set a-seq))))
+(contains-duplicates? [1 2 3 -40])
+(contains-duplicates? [1 2 3 3 -40])
+(defn old-book->new-book [book]
+  (assoc book :authors (set book)))
+(old-book->new-book {:title "The Little Schemer"
+                     :authors [friedman, felleisen]})
+(old-book->new-book {:title "The Little Schemer" :authors [friedman, felleisen]})
+(defn old-book->new-book [book]
+  (assoc book :authors (set (:authors book))))
+(:authors book)
+(books)
+(defn authors [books]
+  (apply clojure.set/union (:authors books)))
+(authors [cities, wild-seed]) 
+(let [china {:name "China Miéville", :birth-year 1972}
+      octavia {:name "Octavia E. Butler"
+               :birth-year 1947
+               :death-year 2006}
+      friedman {:name "Daniel Friedman" :birth-year 1944}
+      felleisen {:name "Matthias Felleisen"}
+      jrrtolkien {:name "J. R. R. Tolkien" :birth-year 1892 :death-year 1973}
+      christopher {:name "Christopher Tolkien" :birth-year 1924}
+      kay {:name "Guy Gavriel Kay" :birth-year 1954}
+      dick {:name "Philip K. Dick", :birth-year 1928, :death-year 1982}
+      zelazny {:name "Roger Zelazny", :birth-year 1937, :death-year 1995}
+      authors-set #{china, felleisen, octavia, friedman}
+      cities {:title "The City and the City" :authors #{china}}
+      wild-seed {:title "Wild Seed", :authors #{octavia}}
+      embassytown {:title "Embassytown", :authors #{china}}
+      little-schemer {:title "The Little Schemer"
+                     :authors #{friedman, felleisen}}
+      silmarillion {:title "Silmarillion"
+                    :authors #{jrrtolkien, christopher, kay}}
+      deus-irae {:title "Deus Irae", :authors #{dick, zelazny}}
+      books [cities, wild-seed, embassytown, little-schemer]])
