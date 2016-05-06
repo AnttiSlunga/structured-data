@@ -209,3 +209,40 @@ quit
                     :authors #{jrrtolkien, christopher, kay}}
       deus-irae {:title "Deus Irae", :authors #{dick, zelazny}}
       books [cities, wild-seed, embassytown, little-schemer]])
+(let [china {:name "China Miéville", :birth-year 1972}
+      octavia {:name "Octavia E. Butler"
+               :birth-year 1947
+               :death-year 2006}
+      friedman {:name "Daniel Friedman" :birth-year 1944}
+      felleisen {:name "Matthias Felleisen"}
+      jrrtolkien {:name "J. R. R. Tolkien" :birth-year 1892 :death-year 1973}
+      christopher {:name "Christopher Tolkien" :birth-year 1924}
+      kay {:name "Guy Gavriel Kay" :birth-year 1954}
+      dick {:name "Philip K. Dick", :birth-year 1928, :death-year 1982}
+      zelazny {:name "Roger Zelazny", :birth-year 1937, :death-year 1995}
+      authors-set #{china, felleisen, octavia, friedman}
+      cities {:title "The City and the City" :authors #{china}}
+      wild-seed {:title "Wild Seed", :authors #{octavia}}
+      embassytown {:title "Embassytown", :authors #{china}}
+      little-schemer {:title "The Little Schemer"
+                     :authors #{friedman, felleisen}}
+      silmarillion {:title "Silmarillion"
+                    :authors #{jrrtolkien, christopher, kay}}
+      deus-irae {:title "Deus Irae", :authors #{dick, zelazny}}
+      books [cities, wild-seed, embassytown, little-schemer]])
+(:author [cities])
+(str ("2000" "-" "2012")
+)
+(str (jee joo))
+(str ("jee" "joo"))
+(str ("jee"))
+(str joo)
+(str 'joo')
+(str 'joo' 'jee')
+(str "joo" "jee")
+(str ("joo" "jee"))
+(apply str ("stringit" "toiset)) 
+)
+))))
+(+ 4 4)
+quit

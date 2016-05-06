@@ -104,19 +104,28 @@
 (defn has-author? [book author]
   (contains? (:authors (old-book->new-book book)) author))
 
-(defn authors [books])
+(defn authors [books]
+  (let [authorit
+        (fn [book] (set (:authors book)))]
+    (set (apply concat (map authorit books)))))
 
 (defn all-author-names [books]
-  :-)
+  (let [nimi
+        (fn [author] (:name author))]
+  (set (map nimi (authors books)))))
 
 (defn author->string [author]
-  :-)
+  (let [nimi (:name author)
+        vuosi (str "(" (:birth-year author) " - " (:death-year author) ")")
+        nimijavuosi (str nimi " " vuosi)]
+    (if (contains? author :birth-year) nimijavuosi nimi)))
 
 (defn authors->string [authors]
-  :-)
+  (apply str (interpose " , " (map author->string authors))))
 
 (defn book->string [book]
-  :-)
+  (let [otsikko (str (:title book) ", written by " (authors->string (:authors book)))]
+  otsikko))
 
 (defn books->string [books]
   :-)
